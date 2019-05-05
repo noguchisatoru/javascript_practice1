@@ -1,4 +1,4 @@
-let btn = document.getElementById('btn');
+const btn = document.getElementById('btn');
 
 btn.addEventListener('click', function(){
     const number1 = Number(document.getElementById('fizz').value);
@@ -9,8 +9,8 @@ btn.addEventListener('click', function(){
     let result = "";
     
     //出力リセット
-    let Dom_Obj = document.getElementById("fizzbuzz");
-    Dom_Obj.textContent = null;
+    let Dom_Obj = document.getElementById("Fizzbuzz");
+    Dom_Obj.textContent = "";
     
     if(Number.isInteger(number1) && Number.isInteger(number2)){
         //整数の場合
@@ -20,27 +20,26 @@ btn.addEventListener('click', function(){
                 fizz += number1;
                 buzz += number2;
                 
-            }else if(i % fizz == 0){
+            }else if(i % fizz === 0){
                 result += "Fizz " + fizz + "<br>"
                 fizz += number1;
                 
-            }else if(i % buzz == 0){
+            }else if(i % buzz === 0){
                 result += "Buzz " + buzz + "<br>"
                 buzz += number2;
             }
         }
-
-    let Div_Element = document.createElement("div");
-    Div_Element.innerHTML = result;
-    let Parent_Object = document.getElementById("fizzbuzz");
-    Parent_Object.appendChild(Div_Element);
-
+    getContent(result);
 }else{
     //どちらか整数ではない場合
     result="整数値を入力してください";
-    let Div_Element = document.createElement("div");
-    Div_Element.innerHTML = result;
-    let Parent_Object = document.getElementById("fizzbuzz");
-    Parent_Object.appendChild(Div_Element);
+    getContent(result);
         }
     }, false);
+
+let getContent = (result) => {
+    let Div_Element = document.createElement("div");
+    Div_Element.innerHTML = result;
+    let Parent_Object = document.getElementById("Fizzbuzz");
+    Parent_Object.appendChild(Div_Element);
+}
