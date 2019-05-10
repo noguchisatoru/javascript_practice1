@@ -9,8 +9,8 @@ btn.addEventListener('click', function(){
     let result = "";
     
     //出力リセット
-    let Dom_Obj = document.getElementById("Fizzbuzz");
-    Dom_Obj.textContent = "";
+    let domObj = document.getElementById("fizzbuzz");
+    domObj.textContent = "";
     
     if(Number.isInteger(number1) && Number.isInteger(number2)){
         //整数の場合
@@ -37,9 +37,9 @@ btn.addEventListener('click', function(){
         }
     }, false);
 
-let getContent = (result) => {
-    let Div_Element = document.createElement("div");
-    Div_Element.innerHTML = result;
-    let Parent_Object = document.getElementById("Fizzbuzz");
-    Parent_Object.appendChild(Div_Element);
+let getContent = result => {
+    let divElement = document.createElement("div");
+    divElement.innerHTML = result;
+    let parentObj = document.getElementById("fizzbuzz");
+    parentObj.appendChild(Div_Element);
 }
